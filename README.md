@@ -11,11 +11,10 @@ On Shopify, we have exactly 100 sneaker shops, and each of these shops sells onl
 3. What is its value?
 
 ## Answer
-1. There are a couple things that are likely going wrong with the calculation. Firstly, the calculation does not consider the quantity of shoes ordered in an order. It possibly just sums up the order amount and divides it by the total count of orders made in 30 days, instead, the summation of order amount should be divided by the summation of total items ordered. Secondly, the calculation includes the outliers which should be omitted out because the outliers do not represent the correct data and it therefor yeilds the wrong AOV.
+1. One of the main things that seems wrong is not filtering the data. Store 78 sells a pair of shoes for more than $25000. This is a clear case of it being an outlier that skews up the results. Store 78 causes the mean to be high. The correct AOV should be caluculated by firstly cleaning up the data by removing the outliers (store 78). After filtering the data we should use the median as the reference point for the AOV because it is more indicative of the actual AOV. The median is relatively closer to the values at the 25th and the 75th percentile. 
 
-2. The correct AOV should be caluculated by firstly cleaning up the data by removing all the outliers (extremely expensive shoes). An average shoe price was determined for each order by dividing the order_amount by total_items for each order. Then all the orders which had an average shoes price of more than a $1000 were removed from the dataset. $1000 is still extremely expensive for a shoe but I was a bit lenient. Lastly, after filtering the dataset, the average shoe price was summed up and divided by the total amount of orders.
-
-3. The AOV = $152.48
+2. The median
+3. The AOV = $284
 ## Question 2:
 
 For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
